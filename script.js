@@ -1,20 +1,36 @@
 (function() {
-  const container = document.getElementById('particles');
-  if (container) {
-    for (let i = 0; i < 18; i++) {
-      const p = document.createElement('div');
-      p.className = 'particle';
-      const size = Math.random() * 4 + 2;
-      p.style.cssText = `
-        width:${size}px;
-        height:${size}px;
-        left:${Math.random() * 100}%;
-        bottom:${Math.random() * 25}%;
-        animation-duration:${(Math.random() * 6 + 5).toFixed(1)}s;
-        animation-delay:${(Math.random() * 8).toFixed(1)}s;
-      `;
-      container.appendChild(p);
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+  if (isIOS) {
+    const vid = document.getElementById('bgvideo');
+    const img = document.getElementById('bgimg');
+    if (vid) vid.style.display = 'none';
+    if (img) {
+      img.src = 'assets/images/bg-animated.png';
+      img.style.display = 'block';
     }
+  } else {
+    const vid = document.getElementById('bgvideo');
+    if (vid) {
+      vid.muted = true;
+      vid.play().catch(() => {});
+    }
+  }
+
+  const container = document.getElementById('particles');
+  for (let i = 0; i < 18; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 4 + 2;
+    p.style.cssText = `
+      width:${size}px;
+      height:${size}px;
+      left:${Math.random() * 100}%;
+      bottom:${Math.random() * 25}%;
+      animation-duration:${(Math.random() * 6 + 5).toFixed(1)}s;
+      animation-delay:${(Math.random() * 8).toFixed(1)}s;
+    `;
+    container.appendChild(p);
   }
 
   document.querySelectorAll('.notif').forEach(btn => {
