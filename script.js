@@ -1,4 +1,12 @@
 (function() {
+  const vid = document.getElementById('bgvideo');
+  if (vid) {
+    vid.setAttribute('playsinline', '');
+    vid.setAttribute('muted', '');
+    vid.muted = true;
+    vid.play().catch(() => {});
+  }
+
   const container = document.getElementById('particles');
   for (let i = 0; i < 18; i++) {
     const p = document.createElement('div');
