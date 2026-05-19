@@ -105,6 +105,93 @@ html, body {
 }
 
 /* ============================================================
+   SPLASH SCREEN
+   ============================================================ */
+
+#splash {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: #0A0100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s ease;
+}
+
+#splash.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#splash-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 40px 24px;
+  text-align: center;
+}
+
+#splash-logo {
+  width: 200px;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+#splash-date {
+  font-family: 'Fifties', 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.3em;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+}
+
+#splash-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  background: #FF3F00;
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  font-family: 'Fifties', 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 24px rgba(255,63,0,0.5);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  margin-top: 8px;
+}
+
+#splash-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+#splash-btn:active {
+  transform: scale(0.96);
+}
+
+#splash-hint {
+  font-family: 'Barlow', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.25);
+  text-transform: uppercase;
+  animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.25; }
+  50%       { opacity: 0.70; }
+}
+
+/* ============================================================
    PARTICLES
    ============================================================ */
 

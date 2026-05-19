@@ -1,26 +1,24 @@
 (function() {
+  const splash = document.getElementById('splash');
+  const btn = document.getElementById('splash-btn');
   const vid = document.getElementById('bgvideo');
 
-  if (vid) {
-    vid.muted = true;
-    vid.defaultMuted = true;
-
-    function startVideo() {
+  function dismissSplash() {
+    if (vid) {
+      vid.muted = true;
+      vid.defaultMuted = true;
       vid.play().then(() => {
         vid.classList.add('loaded');
       }).catch(() => {
         vid.classList.add('loaded');
       });
     }
-
-    if (document.readyState === 'complete') {
-      startVideo();
-    } else {
-      window.addEventListener('load', startVideo);
-    }
-
-    vid.addEventListener('canplaythrough', startVideo);
+    splash.classList.add('hide');
+    setTimeout(() => splash.remove(), 900);
   }
+
+  if (btn) btn.addEventListener('click', dismissSplash);
+  if (btn) btn.addEventListener('touchstart', dismissSplash, { once: true });
 
   const container = document.getElementById('particles');
   for (let i = 0; i < 18; i++) {
@@ -40,6 +38,7 @@
 
   document.querySelectorAll('.notif').forEach(btn => {
     btn.addEventListener('click', function(e) {
+      if (e.target.closest('#splash')) return;
       const ripple = document.createElement('div');
       ripple.className = 'ripple';
       const rect = btn.getBoundingClientRect();
