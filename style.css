@@ -70,11 +70,6 @@ html, body {
   pointer-events: none;
 }
 
-#bgvideo::-webkit-media-controls-start-playback-button {
-  display: none !important;
-  -webkit-appearance: none;
-}
-
 .blob {
   position: absolute;
   border-radius: 50%;

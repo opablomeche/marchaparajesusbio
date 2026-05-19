@@ -1,22 +1,4 @@
 (function() {
-  const vid = document.getElementById('bgvideo');
-  if (!vid) return;
-  vid.muted = true;
-  vid.defaultMuted = true;
-  vid.setAttribute('muted', '');
-  vid.setAttribute('playsinline', '');
-  vid.setAttribute('disablepictureinpicture', '');
-  vid.setAttribute('disableremoteplayback', '');
-
-  function play() {
-    if (vid.paused) vid.play().catch(() => {});
-  }
-
-  vid.addEventListener('loadedmetadata', play);
-  vid.addEventListener('canplay', play);
-  document.addEventListener('touchstart', play, { once: true });
-  setInterval(play, 2000);
-
   const container = document.getElementById('particles');
   if (container) {
     for (let i = 0; i < 18; i++) {
