@@ -68,23 +68,6 @@ html, body {
   object-position: center center;
   z-index: 0;
   pointer-events: none;
-  -webkit-media-controls: none;
-}
-
-#bgvideo::-webkit-media-controls {
-  display: none !important;
-}
-
-#bgvideo::-webkit-media-controls-panel {
-  display: none !important;
-}
-
-#bgvideo::-webkit-media-controls-play-button {
-  display: none !important;
-}
-
-#bgvideo::-webkit-media-controls-start-playback-button {
-  display: none !important;
 }
 
 .blob {
