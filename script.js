@@ -1,10 +1,27 @@
 (function() {
   const vid = document.getElementById('bgvideo');
-  if (vid) {
-    vid.setAttribute('playsinline', '');
-    vid.setAttribute('muted', '');
-    vid.muted = true;
-    vid.play().catch(() => {});
+  if (!vid) return;
+  vid.muted = true;
+  vid.defaultMuted = true;
+  vid.setAttribute('muted', '');
+  vid.setAttribute('playsinline', '');
+  vid.setAttribute('webkit-playsinline', '');
+
+  function tryPlay() {
+    const p = vid.play();
+    if (p !== undefined) {
+      p.catch(() => {
+        document.addEventListener('touchstart', () => {
+          vid.play().catch(() => {});
+        }, { once: true });
+      });
+    }
+  }
+
+  if (vid.readyState >= 2) {
+    tryPlay();
+  } else {
+    vid.addEventListener('canplay', tryPlay, { once: true });
   }
 
   const container = document.getElementById('particles');
