@@ -1,34 +1,38 @@
 (function() {
   const vid = document.getElementById('bgvideo');
   if (!vid) return;
-
   vid.muted = true;
   vid.defaultMuted = true;
-  vid.playsInline = true;
+  vid.setAttribute('muted', '');
+  vid.setAttribute('playsinline', '');
+  vid.setAttribute('disablepictureinpicture', '');
+  vid.setAttribute('disableremoteplayback', '');
 
-  function forcePlay() {
-    vid.play().catch(() => {});
+  function play() {
+    if (vid.paused) vid.play().catch(() => {});
   }
 
-  document.addEventListener('DOMContentLoaded', forcePlay);
-  document.addEventListener('touchstart', forcePlay, { once: true });
-  document.addEventListener('click', forcePlay, { once: true });
-  vid.addEventListener('pause', forcePlay);
+  vid.addEventListener('loadedmetadata', play);
+  vid.addEventListener('canplay', play);
+  document.addEventListener('touchstart', play, { once: true });
+  setInterval(play, 2000);
 
   const container = document.getElementById('particles');
-  for (let i = 0; i < 18; i++) {
-    const p = document.createElement('div');
-    p.className = 'particle';
-    const size = Math.random() * 4 + 2;
-    p.style.cssText = `
-      width:${size}px;
-      height:${size}px;
-      left:${Math.random() * 100}%;
-      bottom:${Math.random() * 25}%;
-      animation-duration:${(Math.random() * 6 + 5).toFixed(1)}s;
-      animation-delay:${(Math.random() * 8).toFixed(1)}s;
-    `;
-    container.appendChild(p);
+  if (container) {
+    for (let i = 0; i < 18; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      const size = Math.random() * 4 + 2;
+      p.style.cssText = `
+        width:${size}px;
+        height:${size}px;
+        left:${Math.random() * 100}%;
+        bottom:${Math.random() * 25}%;
+        animation-duration:${(Math.random() * 6 + 5).toFixed(1)}s;
+        animation-delay:${(Math.random() * 8).toFixed(1)}s;
+      `;
+      container.appendChild(p);
+    }
   }
 
   document.querySelectorAll('.notif').forEach(btn => {

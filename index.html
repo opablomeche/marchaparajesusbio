@@ -16,9 +16,16 @@
 
 <div id="bg">
   <video id="bgvideo"
-    autoplay muted loop playsinline
-    preload="auto"
-    poster="assets/images/bg-mobile.png">
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    disablepictureinpicture
+    disableremoteplayback
+    x-webkit-airplay="deny"
+    poster="assets/images/bg-mobile.png"
+    tabindex="-1">
     <source src="assets/video/bg-compressed.mp4" type="video/mp4"/>
   </video>
   <div class="blob b1"></div>

@@ -68,18 +68,11 @@ html, body {
   object-position: center center;
   z-index: 0;
   pointer-events: none;
-  opacity: 1;
 }
 
-#bgvideo::-webkit-media-controls,
-#bgvideo::-webkit-media-controls-panel,
-#bgvideo::-webkit-media-controls-play-button,
-#bgvideo::-webkit-media-controls-start-playback-button,
-#bgvideo::-webkit-media-controls-overlay-play-button {
+#bgvideo::-webkit-media-controls-start-playback-button {
   display: none !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-  -webkit-appearance: none !important;
+  -webkit-appearance: none;
 }
 
 .blob {
