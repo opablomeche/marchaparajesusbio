@@ -1,0 +1,6 @@
+# Video (too large for GitHub — host on CDN for production)
+assets/video/
+
+# macOS
+.DS_Store
+**/.DS_Store

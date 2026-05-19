@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#FF3F00"/>
+  <meta property="og:title" content="Marcha para Jesus 2026"/>
+  <meta property="og:description" content="Fest Gospel · 06 Jun · Campinas · Entrada Franca"/>
+  <link rel="icon" href="assets/images/favicon.png" type="image/png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <title>Marcha para Jesus</title>
+</head>
+<body>
+
+<div id="bg">
+  <video autoplay muted loop playsinline id="bgvideo">
+    <source src="assets/video/Sequence%2001.mp4" type="video/mp4"/>
+  </video>
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+  <div class="blob b4"></div>
+  <div class="overlay"></div>
+</div>
+
+<div id="particles"></div>
+
+<main class="page">
+
+  <div class="logo-wrap">
+    <img src="assets/logo/BRANCO - cópia.png" alt="Marcha para Jesus" class="logo-img"
+      onerror="this.style.display='none'; document.querySelector('.logo-fallback').style.display='flex'"/>
+    <div class="logo-fallback">
+      <span class="logo-main">MARCHA</span>
+      <span class="logo-sub">PARA JESUS</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <p class="event-date">06 JUN · A PARTIR DAS 12H</p>
+  <p class="event-loc">Praça Arautos da Paz · Taquaral · Campinas</p>
+  <span class="badge">Evento Gratuito</span>
+
+  <div class="notifs" role="list">
+
+    <a class="notif" href="https://festgospel.lojavirtualnuvem.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio"
+       target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Acessar Loja Oficial">
+      <div class="notif-inner">
+        <div class="notif-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 01-8 0"/>
+          </svg>
+        </div>
+        <div class="notif-body">
+          <div class="notif-header">
+            <span class="notif-app">Marcha para Jesus</span>
+            <span class="notif-time">agora</span>
+          </div>
+          <span class="notif-title">Loja Oficial</span>
+          <span class="notif-desc">Compre sua camiseta do evento</span>
+        </div>
+        <span class="notif-chevron">›</span>
+      </div>
+    </a>
+
+    <a class="notif" href="#" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Solicitar Credencial de Mídia">
+      <div class="notif-inner">
+        <div class="notif-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M23 7l-7 5 7 5V7z"/>
+            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+          </svg>
+        </div>
+        <div class="notif-body">
+          <div class="notif-header">
+            <span class="notif-app">Marcha para Jesus</span>
+            <span class="notif-time">em breve</span>
+          </div>
+          <span class="notif-title">Candidate-se · Equipe de Mídia</span>
+          <span class="notif-desc">Preencha o formulário, sirva na Marcha e faça parte da formação</span>
+        </div>
+        <span class="notif-chevron">›</span>
+      </div>
+    </a>
+
+    <a class="notif notif-disabled" href="#" role="listitem" aria-label="YouTube - Em breve" aria-disabled="true">
+      <div class="notif-inner">
+        <div class="notif-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="5 3 19 12 5 21 5 3"/>
+          </svg>
+        </div>
+        <div class="notif-body">
+          <div class="notif-header">
+            <span class="notif-app">Marcha para Jesus</span>
+            <span class="notif-time">em breve</span>
+          </div>
+          <span class="notif-title">YouTube <span class="em-breve">Em breve</span></span>
+          <span class="notif-desc">Inscreva-se no canal</span>
+        </div>
+        <span class="notif-chevron">›</span>
+      </div>
+    </a>
+
+  </div>
+
+  <footer class="footer">
+    <p class="footer-main">Um dia histórico para Campinas</p>
+    <p class="footer-copy">© 2026 Marcha para Jesus · Campinas</p>
+  </footer>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
