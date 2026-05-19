@@ -116,7 +116,8 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.8s ease;
+  overflow: hidden;
+  transition: opacity 1s ease;
 }
 
 #splash.hide {
@@ -140,11 +141,11 @@ html, body {
 }
 
 #splash-date {
-  font-family: 'Fifties', 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.3em;
-  color: rgba(255,255,255,0.6);
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.45);
   text-transform: uppercase;
 }
 
@@ -157,15 +158,19 @@ html, body {
   border: none;
   border-radius: 50px;
   color: #fff;
-  font-family: 'Fifties', 'Barlow Condensed', sans-serif;
-  font-weight: 800;
-  font-size: 18px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
   cursor: pointer;
   box-shadow: 0 4px 24px rgba(255,63,0,0.5);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   margin-top: 8px;
+}
+
+#splash-btn .btn-label {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  color: rgba(255,255,255,0.55);
+  text-transform: none;
 }
 
 #splash-btn svg {
@@ -178,17 +183,19 @@ html, body {
 }
 
 #splash-hint {
-  font-family: 'Barlow', sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.15em;
-  color: rgba(255,255,255,0.25);
-  text-transform: uppercase;
-  animation: blink 2s ease-in-out infinite;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: rgba(255,255,255,0.20);
+  text-transform: none;
+  margin-top: 12px;
+  animation: blink 2.5s ease-in-out infinite;
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 0.25; }
-  50%       { opacity: 0.70; }
+  0%, 100% { opacity: 0.2; }
+  50%       { opacity: 0.6; }
 }
 
 /* ============================================================

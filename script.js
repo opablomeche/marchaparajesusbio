@@ -1,9 +1,6 @@
 (function() {
-  const splash = document.getElementById('splash');
-  const btn = document.getElementById('splash-btn');
-  const vid = document.getElementById('bgvideo');
-
   function dismissSplash() {
+    const vid = document.getElementById('bgvideo');
     if (vid) {
       vid.muted = true;
       vid.defaultMuted = true;
@@ -13,12 +10,18 @@
         vid.classList.add('loaded');
       });
     }
-    splash.classList.add('hide');
-    setTimeout(() => splash.remove(), 900);
+    const splash = document.getElementById('splash');
+    if (splash) {
+      splash.classList.add('hide');
+      setTimeout(() => splash.remove(), 1000);
+    }
   }
 
-  if (btn) btn.addEventListener('click', dismissSplash);
-  if (btn) btn.addEventListener('touchstart', dismissSplash, { once: true });
+  const splashBtn = document.getElementById('splash-btn');
+  if (splashBtn) {
+    splashBtn.addEventListener('click', dismissSplash);
+    splashBtn.addEventListener('touchstart', dismissSplash, { passive: true });
+  }
 
   const container = document.getElementById('particles');
   for (let i = 0; i < 18; i++) {
