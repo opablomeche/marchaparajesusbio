@@ -1,5 +1,15 @@
 (function() {
-  function dismissSplash() {
+  let splashDismissed = false;
+
+  function dismissSplash(e) {
+    if (splashDismissed) return;
+    splashDismissed = true;
+
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+
     const vid = document.getElementById('bgvideo');
     if (vid) {
       vid.muted = true;
@@ -10,6 +20,7 @@
         vid.classList.add('loaded');
       });
     }
+
     const splash = document.getElementById('splash');
     if (splash) {
       splash.classList.add('hide');
@@ -19,8 +30,10 @@
 
   const splashBtn = document.getElementById('splash-btn');
   if (splashBtn) {
-    splashBtn.addEventListener('click', dismissSplash);
-    splashBtn.addEventListener('touchstart', dismissSplash, { passive: true });
+    splashBtn.addEventListener('touchend', dismissSplash, { passive: false });
+    splashBtn.addEventListener('click', function(e) {
+      if (!splashDismissed) dismissSplash(e);
+    });
   }
 
   const container = document.getElementById('particles');
