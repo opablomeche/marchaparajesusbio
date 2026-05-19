@@ -1,20 +1,25 @@
 (function() {
-  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  const vid = document.getElementById('bgvideo');
 
-  if (isIOS) {
-    const vid = document.getElementById('bgvideo');
-    const img = document.getElementById('bgimg');
-    if (vid) vid.style.display = 'none';
-    if (img) {
-      img.src = 'assets/images/bg-animated.png';
-      img.style.display = 'block';
+  if (vid) {
+    vid.muted = true;
+    vid.defaultMuted = true;
+
+    function startVideo() {
+      vid.play().then(() => {
+        vid.classList.add('loaded');
+      }).catch(() => {
+        vid.classList.add('loaded');
+      });
     }
-  } else {
-    const vid = document.getElementById('bgvideo');
-    if (vid) {
-      vid.muted = true;
-      vid.play().catch(() => {});
+
+    if (document.readyState === 'complete') {
+      startVideo();
+    } else {
+      window.addEventListener('load', startVideo);
     }
+
+    vid.addEventListener('canplaythrough', startVideo);
   }
 
   const container = document.getElementById('particles');

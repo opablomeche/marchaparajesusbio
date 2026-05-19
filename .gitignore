@@ -1,5 +1,8 @@
-# Video (too large for GitHub — host on CDN for production)
+# Video (too large for GitHub)
 assets/video/Sequence 01.mp4
+
+# APNG (large file, removed from repo)
+assets/images/bg-animated.png
 
 # macOS
 .DS_Store

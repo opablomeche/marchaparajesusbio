@@ -59,7 +59,7 @@ html, body {
   overflow: hidden;
 }
 
-#bgvideo, #bgimg {
+#bgvideo {
   position: fixed;
   inset: 0;
   width: 100%;
@@ -68,6 +68,12 @@ html, body {
   object-position: center center;
   z-index: 0;
   pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+#bgvideo.loaded {
+  opacity: 1;
 }
 
 .blob {
