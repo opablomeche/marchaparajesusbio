@@ -1,4 +1,20 @@
 (function() {
+  const vid = document.getElementById('bgvideo');
+  if (!vid) return;
+
+  vid.muted = true;
+  vid.defaultMuted = true;
+  vid.playsInline = true;
+
+  function forcePlay() {
+    vid.play().catch(() => {});
+  }
+
+  document.addEventListener('DOMContentLoaded', forcePlay);
+  document.addEventListener('touchstart', forcePlay, { once: true });
+  document.addEventListener('click', forcePlay, { once: true });
+  vid.addEventListener('pause', forcePlay);
+
   const container = document.getElementById('particles');
   for (let i = 0; i < 18; i++) {
     const p = document.createElement('div');
